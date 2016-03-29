@@ -1,0 +1,28 @@
+{
+  "name": "shiny-new",
+  "description": "A shiny new boilerplate.",
+  "author": "Ron Gierlach <ron@theuprisingcreative.com> (http://youfoundron.com)",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "NODE_ENV=production node ./server",
+    "start:dev": "nodemon ./server --watch ./server",
+    "build": "NODE_ENV=production webpack -c --progress",
+    "clean": "rm -rf dist/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rongierlach/shiny-new.git"
+  },
+  "keywords": [
+    "shiny", "new", "webpack", "es6", "react", "boilerplate"
+  ],
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/rongierlach/shiny-new/issues" },
+  "homepage": "https://github.com/rongierlach/shiny-new",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}
