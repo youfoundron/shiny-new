@@ -3,7 +3,11 @@
   "description": "A shiny new boilerplate.",
   "author": "Ron Gierlach <ron@theuprisingcreative.com> (http://youfoundron.com)",
   "version": "0.0.1",
-  "scripts": {},
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack -c --progress",
+    "start": "cross-env NODE_ENV=development node index.js",
+    "start:prod": "cross-env NODE_ENV=production node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rongierlach/shiny-new.git"
@@ -21,9 +25,18 @@
     "url": "https://github.com/rongierlach/shiny-new/issues"
   },
   "homepage": "https://github.com/rongierlach/shiny-new",
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.7.2"
+  },
   "devDependencies": {
+    "cross-env": "^1.0.7",
     "path": "^0.12.7",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.8.4"
   }
 }
