@@ -22,8 +22,21 @@ const common = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
+  modules: {
+    loaders: [
+      {
+        test: /\.sass$/,
+        loader: 
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules/
+      }
+    ]
+  },
   plugins: [
-    
+
   ]
 }
 
