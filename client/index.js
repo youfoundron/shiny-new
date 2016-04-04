@@ -1,10 +1,9 @@
-// if (process.env.BROWSER) require('./styles/_Main.scss')
-// import './styles/_Main.sass'
-import { Provider } from 'react-redux'
+import './styles/base.sass'
 import React from 'react'
-import configureStore from './store/configureStore'
+import { Provider } from 'react-redux'
 import { render } from 'react-dom'
 import routes from './routes'
+import configureStore from './store/configureStore'
 
 const initialState = window.__INITIAL_STATE__
 const store = configureStore(initialState)

@@ -5,8 +5,9 @@
   "version": "0.0.1",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -c --progress",
-    "start": "cross-env NODE_ENV=development node index.js",
-    "start:prod": "cross-env NODE_ENV=production node index.js"
+    "clean": "rm -rf build/*",
+    "start": "cross-env NODE_ENV=development nodemon ./server --watch ./server",
+    "start:prod": "cross-env NODE_ENV=production node ./server"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "babel-register": "^6.7.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.6.5",
     "cross-env": "^1.0.7",
     "path": "^0.12.7",
     "webpack": "^1.12.14",
