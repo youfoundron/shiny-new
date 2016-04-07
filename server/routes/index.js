@@ -5,7 +5,7 @@ import path from 'path'
 export default function(app, server) {
   let routers = {}
 
-  for (var file of fs.readderSync(__dirname)) {
+  for (let file of fs.readderSync(__dirname)) {
     const file_path = path.join(__dirname, file)
     const name = path.basename(file, path.extname(file))
     const stats = fs.statSync(file_path)
@@ -16,6 +16,10 @@ export default function(app, server) {
     {
       continue
     }
-    
+
+    routers[name] = require(file_path)(app, server)
+
   }
+
+  return routers
 }
