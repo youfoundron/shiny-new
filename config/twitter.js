@@ -1,6 +1,6 @@
-let tw = {
+const tw = {
   site: "http://youfoundron.com",
-  creator: "@youfoundron"
+  creator: "@youfoundron",
   hashtag: "#makeamericagreatagain",
   consumer_key: "",
   consumer_secret: "",

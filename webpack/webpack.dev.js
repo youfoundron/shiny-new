@@ -12,7 +12,7 @@ const webpack_config = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacemnetPlugin()
+    // new webpack.HotModuleReplacemnetPlugin()
   ]
 }
 

@@ -1,6 +1,8 @@
 import path from 'path'
 import webpack from 'webpack'
 import merge from 'webpack-merge'
+import dev from './webpack/webpack.dev'
+import prod from './webpack/webpack.prod'
 
 const TARGET = process.env.npm_lifecycle_event
 const DEBUG = process.env.NODE_ENV !== 'production'
@@ -26,7 +28,7 @@ const common = {
     loaders: [
       {
         test: /\.sass$/,
-        loader: 
+        loader: 'sass'
       },
       {
         test: /\.jsx?$/,
@@ -45,15 +47,18 @@ const webpack_config = (() => {
   switch (TARGET) {
     case 'start':
       return merge(common, {})
+      // return merge(common, dev)
     case 'start:prod':
       return merge(common, {})
+      // return merge(common, prod)
     case 'build':
       return merge(common, {})
+      // return merge(common, prod)
     default:
       return merge(common, {})
+      // return merge(common, prod)
   }
 })()
 
-console.log(webpack_config)
 
 export default webpack_config

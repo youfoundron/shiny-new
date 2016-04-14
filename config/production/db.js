@@ -1,5 +1,5 @@
-let db = {
-	process.env.MONGOLAB_URI
+const db = {
+	host: process.env.MONGOLAB_URI
 }
 
 export default db
