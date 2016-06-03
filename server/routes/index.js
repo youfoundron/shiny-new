@@ -1,15 +1,15 @@
-import config from '../../config'
 import fs from 'fs'
 import path from 'path'
 import express from 'express'
 
-export default function() {
+export default (() => {
   let routers = []
 
-  for (let file of fs.readderSync(__dirname)) {
+  for (let file of fs.readdirSync(__dirname)) {
     const file_path = path.join(__dirname, file)
-    // const name = path.basename(file, path.extname(file))
-    // const stats = fs.statSync(file_path)
+    const name = path.basename(file, path.extname(file))
+    const stats = fs.statSync(file_path)
+
     // Continue condition
     if ((/^index\./.test(file)) ||
         (/^\./.test(file)) ||
@@ -22,4 +22,4 @@ export default function() {
   }
 
   return routers
-}
+})()

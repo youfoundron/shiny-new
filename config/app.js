@@ -1,6 +1,6 @@
 const app = {
-  port: 5000,
-  hosturl: "http://localhost:5000",
+  port: 8181,
+  hosturl: "http://localhost:8181",
 
   cdn: "/",
   version: "?v=0",
@@ -9,6 +9,7 @@ const app = {
   title: "Shiny New",
   site_description: "",
   site_keywords: "",
+  token_secret: "look_at_my_shiny_new_app",
 
   cookie: {
     name: "youfoundron",

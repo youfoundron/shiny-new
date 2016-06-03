@@ -8,8 +8,8 @@ etc.parsers['js'] = (filePath) => {
   const f = require(filePath)
   return (
     (isFunction(f))
-    ? f(etc).default
-    : f.default
+    ? f(etc)
+    : f
   )
 }
 
@@ -26,7 +26,5 @@ etc.folder(env_dir)
 
 // load in default files
 etc.folder(__dirname)
-
-// if (env === 'development') console.log(etc.toJSON())
 
 export default etc
