@@ -25,6 +25,8 @@ server.set('views', path.resolve(__dirname, '../views'))
 server.set('view engine', 'jade')
 
 // Routes and Middleware
+// server.use('/static', express.static())
+server.use(express.static('static'))
 server.use('/', routes)
 // server.use(reactMiddleware)
 
