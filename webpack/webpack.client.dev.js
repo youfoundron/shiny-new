@@ -22,7 +22,7 @@ export default {
     crossOriginLoading: 'anonymous'
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    // new ExtractTextPlugin('styles.css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({

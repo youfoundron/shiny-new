@@ -4,8 +4,8 @@
   "author": "Ron Gierlach <ron@theuprisingcreative.com> (http://youfoundron.com)",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run build && node ./build/server.bundle.js",
-    "start:prod": "npm run build:prod && node ./build/server.bundle.js",
+    "start": "npm run build && babel-node ./build/server.bundle.js",
+    "start:prod": "npm run build:prod && babel-node ./build/server.bundle.js",
     "build": "cross-env NODE_ENV=development webpack --config=webpack/webpack.config.client.babel.js && webpack --config=webpack/webpack.config.server.babel.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config=webpack/webpack.config.client.babel.js && webpack --config=webpack/webpack.config.server.babel.js",
     "clean": "rm -rf ./build/*"
@@ -43,6 +43,7 @@
     "react-router-redux": "^4.0.5"
   },
   "devDependencies": {
+    "babel-cli": "^6.9.0",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",

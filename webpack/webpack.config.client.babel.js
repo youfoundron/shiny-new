@@ -89,6 +89,8 @@ const webpack_config = (() => {
     case 'start:prod':
       return merge(common, prod)
     case 'build':
+      return merge(common, dev)
+    case 'build:prod':
       return merge(common, prod)
     default:
       return merge(common, {})

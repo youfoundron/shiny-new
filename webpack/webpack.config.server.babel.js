@@ -36,7 +36,8 @@ export default {
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        include: PATHS.entry
+        include: PATHS.entry,
+        exclude: /node_modules/
       },
       {
         test : /\.json$/,

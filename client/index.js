@@ -23,9 +23,9 @@ ReactDOM.render(
 // https://github.com/gaearon/react-hot-loader/issues/249
 if (module.hot) {
   module.hot.accept('./react', () => {
-    const Root = require('./react')
+    const _Root = require('./react')
     ReactDOM.render(
-      <AppContainer><Root /></AppContainer>,
+      <AppContainer><_Root /></AppContainer>,
       rootElement
     )
   })
