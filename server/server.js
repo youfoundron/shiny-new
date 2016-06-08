@@ -1,5 +1,6 @@
 import cors from 'cors'
 import path from 'path'
+import chalk from 'chalk'
 import express from 'express'
 import horizon from '@horizon/server'
 import compression from 'compression'
@@ -26,6 +27,7 @@ server.set('view engine', 'jade')
 
 // Routes and Middleware
 // server.use('/static', express.static())
+server.use(express.static('build'))
 server.use(express.static('static'))
 server.use('/', routes)
 // server.use(reactMiddleware)
@@ -38,7 +40,7 @@ const run = () => {
       return
     }
 
-    console.log(`Express listening in ${server.get('env')} on port ${PORT}`)
+    console.log(chalk.green(`Express listening in ${chalk.underline.bold(server.get('env'))} on port ${PORT}`))
   })
 
   // Start Horizon server

@@ -1,14 +1,32 @@
 {
   "name": "shiny_new",
-  "description": "A shiny new boilerplate.",
+  "description": "A shiny new boilerplate using React, Babel, Sass, Webpack, Express, Horizon, and RethinkDB",
   "author": "Ron Gierlach <ron@theuprisingcreative.com> (http://youfoundron.com)",
   "version": "0.0.1",
-  "scripts": {},
+  "scripts": {
+    "start": "npm run build && node ./build/server.bundle.js",
+    "start:prod": "npm run build:prod && node ./build/server.bundle.js",
+    "build": "cross-env NODE_ENV=development webpack --config=webpack/webpack.config.client.babel.js && webpack --config=webpack/webpack.config.server.babel.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config=webpack/webpack.config.client.babel.js && webpack --config=webpack/webpack.config.server.babel.js",
+    "clean": "rm -rf ./build/*"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rongierlach/shiny-new.git"
   },
-  "keywords": {},
+  "keywords": [
+    "shiny",
+    "new",
+    "boilerplate",
+    "react",
+    "babel",
+    "sass",
+    "webpack",
+    "express",
+    "horizon",
+    "rethink",
+    "rethinkdb"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rongieralch/shiny-new/issues"
@@ -20,7 +38,9 @@
     "horizon-react": "^0.3.0",
     "jade": "^1.11.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
@@ -33,12 +53,24 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
+    "chalk": "^1.1.3",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.7.1",
+    "cross-env": "^1.0.8",
     "etc": "^1.1.0",
     "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "json-loader": "^0.5.4",
     "morgan": "^1.7.0",
-    "webpack": "^1.13.1"
+    "progress-bar-webpack-plugin": "^1.8.0",
+    "react-hot-loader": "^1.3.0",
+    "react-router-redux": "^4.0.5",
+    "redux-thunk": "^2.1.0",
+    "script-loader": "^0.7.0",
+    "webpack": "^1.13.1",
+    "webpack-anybar-plugin": "^2.2.0",
+    "webpack-merge": "^0.14.0"
   }
 }
